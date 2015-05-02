@@ -1,0 +1,9 @@
+<% var tableOrderedConfigs = _.sortBy(configs, function(config) { return config.column_order; }); %>
+<% _.each(tableOrderedConfigs, function (header) { %>
+
+<% if (header.visibility === 'true') { %>
+
+    <%= table_header_item_template(header) %>
+<% } %>
+
+<% }) %>

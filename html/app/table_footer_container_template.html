@@ -1,0 +1,127 @@
+<% var obj = arguments[0]; %>
+<% var totalPages = Math.ceil(obj.totalShowQuantity / obj.showQuantity); %>
+<% totalPages = totalPages <= 0 ? 1 : totalPages; %>
+<div class="popover" data-pop="showQuantity">
+    <form>
+        <div class="row popover-content">
+            <div class="col-xs-3">
+                Show
+            </div>
+            <div class="col-xs-5">
+                <input type="number" name="showQuantity" value="<%= obj.showQuantity %>" step="1" class="w-100p" data-focus="" data-select="">
+            </div>
+            <div class="col-xs-4">
+                per page
+            </div>
+        </div>
+        <div class="row popover-content">
+            <div class="col-xs-7">
+
+            </div>
+            <div class="col-xs-5 cp" data-action="changeShowQuantity">
+                Confirm
+                <i class="icon-ok active"></i>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="pull-left">
+    <% if (obj.totalShowQuantity !== obj.totalDataQuantity) { %>
+    <span>Total: <%= obj.totalDataQuantity %> </span>
+    <span>&nbsp;&nbsp;Applied filter: <%= obj.totalShowQuantity %> </span>
+    <% } else { %>
+    <span>Total: <%= obj.totalShowQuantity %> </span>
+    <% } %>
+    <% if (obj.showQuantity !== obj.curShowQuantity) { %>
+    <span>&nbsp;&nbsp;On page (max/cur): </span>
+    <span class="c-mag cp" data-action="popShowQuantity"><%= obj.showQuantity %></span>
+    <span>/</span>
+    <span><%= obj.curShowQuantity %></span>
+    <% } else { %>
+    <span>&nbsp;&nbsp;On page: </span>
+    <span class="c-mag cp" data-action="popShowQuantity"><%= obj.showQuantity %></span>
+    <% } %>
+</div>
+<div class="pull-right">
+    <div class="popover" data-pop="showPage">
+        <form>
+            <div class="row popover-content">
+                <div class="col-xs-3">
+                    Show
+                </div>
+                <div class="col-xs-5">
+                    <input type="number" name="showPage" value="<%= obj.currentShowPage %>" step="1" class="w-100p" data-focus="" data-select="">
+                </div>
+                <div class="col-xs-4">
+                    page
+                </div>
+            </div>
+            <div class="row popover-content">
+                <div class="col-xs-7">
+
+                </div>
+                <div class="col-xs-5 cp" data-action="changeShowPage">
+                    Confirm
+                    <i class="icon-ok active"></i>
+                </div>
+            </div>
+        </form>
+    </div>
+    <% if (totalPages >= obj.currentShowPage && obj.currentShowPage > 1) { %>
+    <div class="pull-left" >
+        <i class="cp icon-left c-mag m-r5" data-action="pageDecrement"></i>
+    </div>
+    <% } %>
+    <% if (totalPages < 6) { %>
+    <% for(var i = 1; i <= totalPages; i++) { %>
+    <% if (i === obj.currentShowPage) { %>
+    <span class="c-mag"><%= i %></span>
+    <% } else { %>
+    <span class="cp" data-action="pageShow" data-target="<%= i %>"><%= i %></span>
+    <% } %>
+    <% } %>
+    <% } else { %>
+    <% var leftPagesLeft = obj.currentShowPage - 1; %>
+    <% if (leftPagesLeft > 0) { %>
+    <% var leftDivider = 4; %>
+    <% var leftKoeff = leftPagesLeft / leftDivider; %>
+    <% var leftPages = []; %>
+    <% for(var lk = 1; lk <= leftDivider; lk++) { %>
+    <% var toPush = Math.round(lk*leftKoeff); %>
+    <% if (toPush > 0) { %>
+    <% leftPages.push(toPush); %>
+    <% } %>
+    <% } %>
+    <% leftPages.unshift(1); %>
+    <% leftPages = _.uniq(leftPages); %>
+    <% leftPages = _.without(leftPages, obj.currentShowPage); %>
+    <% _.each(leftPages, function(p) { %>
+    <span class="cp" data-action="pageShow" data-target="<%= p %>"><%= p %></span>
+    <% }); %>
+    <% } %>
+    <span class="c-mag cp" data-action="popShowPage">...</span>
+    <% var rightPagesLeft = totalPages - obj.currentShowPage; %>
+    <% if (rightPagesLeft > 0) { %>
+    <% var rightDivider = 4; %>
+    <% var rightKoeff = rightPagesLeft / rightDivider; %>
+    <% var rightPages = []; %>
+    <% for(var rk = 1; rk <= rightDivider; rk++) { %>
+    <% var toPush = Math.round(obj.currentShowPage + rk*rightKoeff); %>
+    <% if (toPush > 0) { %>
+    <% rightPages.push(toPush); %>
+    <% } %>
+    <% } %>
+    <% rightPages.push(totalPages); %>
+    <% rightPages = _.uniq(rightPages); %>
+    <% rightPages = _.without(rightPages, obj.currentShowPage); %>
+    <% _.each(rightPages, function(p) { %>
+    <span class="cp" data-action="pageShow" data-target="<%= p %>"><%= p %></span>
+    <% }); %>
+    <% } %>
+    <% } %>
+    <% if (totalPages >= obj.currentShowPage && obj.currentShowPage < totalPages) { %>
+    <div class="pull-right" >
+        <i class="cp icon-right c-mag m-l5" data-action="pageIncrement"></i>
+    </div>
+    <% } %>
+</div>

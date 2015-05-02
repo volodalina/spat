@@ -1,0 +1,11 @@
+<% var tt = arguments[0]; %>
+<% if (tt.header_description) { %>
+<div class="pull-left header-description p-l">
+    <%= tt.header_description %>
+</div>
+<% } %>
+
+
+<% _.each(tt.buttons, function (btn) { %>
+    <%= tt.toolbar_item_template(btn) %>
+<% }) %>

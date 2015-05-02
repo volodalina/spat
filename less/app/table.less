@@ -1,0 +1,113 @@
+.table-scroll-container {
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  tbody td {
+    display: inline-block;
+    padding: 0;
+  }
+
+  .table-body-item {
+    padding: 2px 4px 2px 4px;
+    border: 1px solid @gray-superlight;
+    &.even {
+      background-color:#DCE5F5;// #CAE1FF;
+    }
+  }
+}
+.header-container {
+  position: fixed;
+  top: 0;
+  opacity: 1;
+  background: @white;
+
+
+  .table-header-content {
+    position: relative;
+    clear: both;
+
+    .table-header-item {
+      padding: 2px 4px 2px 4px;
+      border: 1px solid @gray-light;
+      background-color: @cornflowerblue;
+      color: #EDDCA8;
+    }
+
+    .mousemove {
+      position: absolute;
+      box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+      background-clip: padding-box;
+      .table-header-item {
+        background-color: @gray-dark;
+        color: @green-dark;
+        opacity: 0.5;
+      }
+      z-index: 30;
+    }
+  }
+
+  .table-splitter-container {
+    position: absolute;
+    z-index: 20;
+
+    .table-splitter-item {
+      position: absolute;
+
+      &.draggable {
+        z-index: 50;
+        visibility: visible;
+        cursor: col-resize;
+      }
+
+      .line {
+        position: relative;
+        height: 100%;
+        width: 2px;
+        left: e('calc( 50% - 1px )');
+      }
+      &:hover {
+        .line {
+          background-color: @blue-light;
+        }
+      }
+
+      &.visible {
+        .line {
+          box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+          background-color: @springgreen;
+        }
+      }
+    }
+  }
+}
+
+tr[data-rowid]:hover{
+  & div {
+    border-color:@springgreen @gray-superlight @springgreen ;
+  }
+
+  & :first-child{
+    & div{
+      border-color:@springgreen @gray-superlight @springgreen @springgreen;
+    }
+  }
+
+  & :last-child{
+    & div{
+      border-color:@springgreen @springgreen @springgreen @gray-superlight;
+    }
+  }
+}
+
+.table-tr-select {
+  .even.table-body-item {
+    background-color:lightgreen;
+  }
+
+  .table-body-item, input[readonly] {
+    background-color:lightgreen;
+  }
+}

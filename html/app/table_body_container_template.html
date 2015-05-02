@@ -1,0 +1,17 @@
+<% var obj = arguments[0]; %>
+<% headersInOrder = _.sortBy(obj.headers, function(header) { return header.column_order }); %>
+<% var headersByOrder = _.indexBy(headersInOrder, 'column_order'); %>
+
+
+<tr data-ctxmenu=""  data-rowid="<%= obj.data[obj.keyHeader.id] %>">
+    <% for(var ordkey in headersByOrder) { %>
+        <% var curHeader = headersByOrder[ordkey]; %>
+        <% if (curHeader.static === 'true') { %>
+            <%= table_body_item_template({ ind: obj.ind, value: obj.data['current_order'], class: 'column-counter-td', curHeader: curHeader }) %>
+        <% } else if ( obj.data[curHeader.id] && curHeader.visibility === 'true' ) { %>
+            <%= table_body_item_template({ ind: obj.ind, value: obj.data[curHeader.id], curHeader: curHeader}) %>
+        <% } else if (curHeader.visibility === 'true') { %>
+            <%= table_body_item_template({ ind: obj.ind, curHeader: curHeader }) %>
+        <% } %>
+    <% } %>
+</tr>

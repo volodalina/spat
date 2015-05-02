@@ -1,0 +1,15 @@
+.vendor(@property, @value) {
+  -webkit-@{property}: @value;
+  -moz-@{property}: @value;
+  -ms-@{property}: @value;
+  -o-@{property}: @value;
+  @{property}: @value;
+}
+
+.vendor(@property, @value1, @value2) {
+  -webkit-@{property}: @value1, @value2;
+  -moz-@{property}: @value1, @value2;
+  -ms-@{property}: @value1, @value2;
+  -o-@{property}: @value1, @value2;
+  @{property}: @value1, @value2;
+}

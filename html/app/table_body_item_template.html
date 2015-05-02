@@ -1,0 +1,8 @@
+<% var item = arguments[0]; %>
+<td
+    <%= (item.curHeader && item.curHeader.width) ? 'style=\"width:' + item.curHeader.width + 'px\"' : '' %>
+    <%= item.curHeader ? 'data-tdheaderid=\'' + item.curHeader.id + '\'' : '' %>
+    <%= item.class ? 'class=\'' + item.class + '\'' :'' %> >
+            <div class="table-body-item text-overflow <%= item.ind % 2 === 0 ? 'even' : '' %>"><%= item.value ? item.value : '&nbsp;' %></div>
+
+</td>

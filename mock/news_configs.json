@@ -1,0 +1,105 @@
+[
+  {
+    "id": "column_counter",
+    "column_order": 1,
+    "type": "int",
+    "visibility": "true",
+    "label": "#",
+    "sort_order": "",
+    "sort_direction": "",
+    "enum_type": "",
+    "default_width": 40,
+    "static": "true",
+    "focus_item":""
+  },
+  {
+    "id": "id",
+    "column_order": 2,
+    "type": "str",
+    "visibility": "true",
+    "readonly": "true",
+    "label": "Message ID",
+    "sort_order": "",
+    "sort_direction": "",
+    "filter": "",
+    "key": "true",
+    "focus_item":""
+  },
+  {
+    "id": "message",
+    "column_order": 3,
+    "type": "str",
+    "visibility": "true",
+    "label": "Message",
+    "sort_order": "",
+    "sort_direction": "",
+    "filter": "",
+    "focus_item":""
+  },
+  {
+    "id": "picture",
+    "column_order": 4,
+    "type": "str",
+    "visibility": "true",
+    "label": "Picture",
+    "sort_order": "",
+    "sort_direction": "",
+    "filter": "",
+    "focus_item":""
+  },
+  {
+    "id": "link",
+    "column_order": 5,
+    "type": "str",
+    "visibility": "true",
+    "label": "Link",
+    "sort_order": "",
+    "sort_direction": "",
+    "filter": "",
+    "focus_item":""
+  },
+  {
+    "id": "source",
+    "column_order": 6,
+    "type": "str",
+    "visibility": "true",
+    "label": "Source",
+    "sort_order": "",
+    "sort_direction": "",
+    "filter": "",
+    "focus_item":""
+  },
+  {
+    "id": "description",
+    "column_order": 7,
+    "type": "str",
+    "visibility": "true",
+    "label": "Description",
+    "sort_order": "",
+    "sort_direction": "",
+    "filter": "",
+    "focus_item":""
+  },
+  {
+    "id": "created_time",
+    "column_order": 8,
+    "type": "str",
+    "visibility": "true",
+    "label": "Created time",
+    "sort_order": "",
+    "sort_direction": "",
+    "filter": "",
+    "focus_item":"true"
+  },
+  {
+    "id": "updated_time",
+    "column_order": 9,
+    "type": "str",
+    "visibility": "true",
+    "label": "Updated time",
+    "sort_order": "",
+    "sort_direction": "",
+    "filter": "",
+    "focus_item":""
+  }
+]

@@ -1,0 +1,82 @@
+<% var obj = arguments[0]; %>
+<button type="button" class="pull-right <%= obj.class ?obj.class:'' %> , button_no_borders"
+<%= obj.title?'data-tooltip=\'' + obj.title + '\'' :'' %>
+<%= obj.data_action?'data-action=\'' + obj.data_action + '\'' :'' %>
+<%= obj.name?'name=\'' + obj.name + '\'' :'' %> >
+
+
+
+<% if (obj.icon == "icon-news-fake" ) { %>
+<svg width="30px" height="30px" viewBox="-20 -40 216 372" version="1.1node se" >
+    <g id="Group" stroke="#220E99"  fill="none">
+        <path stroke-width="25"  d="M55,140 L55,70 L110,115 L110,45 "/>
+        <circle cx="85" cy="100" r="80" stroke-width="8"/>
+        <path stroke-width="8" d="M-60,180 -10,180 -10,-20 180,-20 180,180 230,180 85,300 z"/>
+        <path stroke-width="8" d="M-60,280 -60,320 230,320 230,280 "/>
+    </g>
+</svg>
+<% } %>
+
+<% if (obj.icon == "icon-delete-news" ) { %>
+<svg width="30px" height="30px" viewBox="-20 -40 216 372" version="1.1node se" >
+    <g id="Group" stroke="#220E99"  fill="none">
+        <path stroke-width="40" stroke="#CD1076" d="M-30,160   200,280 "/>
+        <path stroke-width="40" stroke="#CD1076" d="M200,160   -30,280 "/>
+        <path stroke-width="8"  d="M-60,280 -60,320 230,320 230,280 "/>
+        <path stroke-width="25"  d="M55,110 L55,40 L110,85 L110,15 "/>
+        <circle cx="85" cy="70" r="80" stroke-width="8"/>
+
+    </g>
+</svg>
+<% } %>
+
+<% if (obj.icon == "icon-reset-width" ) { %>
+<svg width="30px" height="30px" viewBox="-20 -40 216 372" version="1.1node se" >
+    <g id="Group" stroke="#220E99"  fill="none">
+        <path stroke-width="40" stroke="#CD1076" d="M-30,160   200,280 "/>
+        <path stroke-width="40" stroke="#CD1076" d="M200,160   -30,280 "/>
+        <path stroke-width="8"  d="M-60,280 -60,320 230,320 230,280 "/>
+        <path stroke-width="20" d="M105,-30 105,140 M60,-30 60,140"/>
+        <path stroke-width="25" d="M-30,55 50,55 M-30,60 10,15 M-30,60 10,105"/>
+        <path stroke-width="25" d="M105,55 185,55 M185,60 145,15 M185,60 145,105"/>
+    </g>
+</svg>
+<% } %>
+
+
+<% if (obj.icon == "icon-clean-sorting" ) { %>
+<svg width="30px" height="30px" viewBox="-20 -40 216 372" version="1.1node se" >
+    <g id="Group" stroke="#CD1076"  fill="none">
+        <path stroke-width="40" d="M-30,160 200,280 "/>
+        <path stroke-width="40" d="M200,160 -30,280 "/>
+        <path stroke-width="8" stroke="#220E99" d="M-60,280 -60,320 230,320 230,280 "/>
+        <path stroke-width="20" d="M-30,0 0,0 M-30,40 30,40 M-30,80 60,80 M-30,120 90,120"/>
+        <path stroke-width="20" d="M80,0 200,0 M200,40 110,40 M200,80 140,80 M200,120 170,120"/>
+    </g>
+</svg>
+<% } %>
+
+<% if (obj.icon == "icon-show-settings" ) { %>
+<svg width="30" height="30" viewBox="30 -10 56 122">
+    <g>
+        <rect fill="#cd1076" stroke="#000000" x="18.375" y="12.25" width="19.25" height="19.5" transform="rotate(-42.61405563354492 28.000000000000004,22.000000000000004) " />
+        <rect fill="#cd1076" stroke="#000000" x="72.875" y="66.25" width="19.25" height="19.5" transform="rotate(-42.61405563354492 82.5,76) " />
+        <rect fill="#cd1076" stroke="#000000" x="17.625" y="67.5" width="19.25" height="19.5" transform="rotate(-42.61405563354492 27.250000000000004,77.24999999999999) " />
+        <rect fill="#cd1076" stroke="#000000" x="72.625" y="14" width="19.25" height="19.5"  transform="rotate(-42.61405563354492 82.25000000000001,23.75) "/>
+        <rect fill="#cd1076" stroke="#000000" x="6.125" y="40.25" width="19.25" height="19.5" />
+        <rect fill="#cd1076" stroke="#000000" x="84.375" y="39.75" width="19.25" height="19.5" />
+        <rect fill="#cd1076" stroke="#000000" x="45" y="1.25" width="19.25" height="19.5" />
+        <rect fill="#cd1076" stroke="#000000" x="45.375" y="78" width="19.25" height="19.5" />
+        <ellipse fill="#220e99" stroke="#000000" cx="54.55" cy="49.75"  rx="37.55" ry="37.75"/>
+        <ellipse fill="#ffffff" stroke="#000000" cx="54.5" cy="49.625"  rx="18.5" ry="18.875"/>
+        <line stroke-width="3" stroke="#220e99" x1="1.4" y1="110.1" x2="110.15" y2="110.1" />
+        <line stroke-width="3" stroke="#220e99" x1="108.85" y1="110.8" x2="108.85" y2="96.55" />
+        <line stroke-width="3" stroke="#220e99" x1="1.8" y1="111.4" x2="1.8" y2="95.9"/>
+    </g>
+</svg>
+<% } %>
+
+<% if (obj.text) { %>
+<span><%= obj.text %></span>
+<% } %>
+</button>

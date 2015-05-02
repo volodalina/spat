@@ -1,0 +1,39 @@
+<% var obj = arguments[0]; %>
+<div <%= obj.static !== 'true' ? 'data-sort=\'\'' :'' %> <%= obj.static !== 'true' ? 'data-reorder=\'\'' :'' %>
+data-id="<%= obj.id %>" class="pull-left <%= obj.static !== 'true' ? 'cp' : 'column-counter-header' %>"
+style="width:<%= obj.width %>px;">
+<div class="table-header-item">
+    <div class="text-overflow table-header-text-container">
+        <% if (obj.sort_direction === '1') { %>
+            <% if (obj.sort_order) { %>
+            <span class="sort-order-badge"><%= obj.sort_order %></span>
+            <svg width="15px" height="13px" viewBox="20 14 50 35" version="1.1">
+                <g id="Group" stroke="#CD1076" stroke-width="5" fill="none">
+                    <path d="M20,20 40,20 M20,30 50,30 M20,40 60,40 M20,50 70,50"/>
+                </g>
+            </svg>
+            <% } %>
+
+        <% } else if (obj.sort_direction === '-1') { %>
+            <% if (obj.sort_order) { %>
+            <span class="sort-order-badge"><%= obj.sort_order %></span>
+            <svg width="15px" height="13px" viewBox="20 14 50 35" version="1.1">
+                <g id="Group" stroke="#CD1076" stroke-width="5" fill="none">
+                    <path d="M20,20 70,20 M20,30 60,30 M20,40 50,40 M20,50 40,50"/>
+                </g>
+            </svg>
+            <% } %>
+        <% } %>
+        <% if (obj.label) { %>
+            <%= obj.label %>
+        <% } %>
+    </div>
+    <% if (obj.static !== 'true') { %>
+    <div class="table-header-filter-container <%= obj.filter ? 'in-use' : '' %>"
+         data-action="popShowFilter" data-columnid="<%= obj.id %>"
+         data-tooltip="<%= obj.header %> filter" >
+        <i class="icon-funnel"></i>
+    </div>
+    <% } %>
+</div>
+</div>

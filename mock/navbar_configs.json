@@ -1,0 +1,114 @@
+[
+  {
+    "links": [
+      {
+        "hash_enter": "#table/news",
+        "urls": [
+          {
+            "type": "table_configs",
+            "collection_id": "news_headers"
+          },
+          {
+            "type": "table_data",
+            "collection_id": "news_data"
+          },
+          {
+            "type": "table_filters",
+            "collection_id": "news_filters"
+          }
+        ],
+        "header_description": "News",
+        "ctxItems": [
+          {
+            "type": "id",
+            "icon": "icon-detail-view",
+            "text": "News detail",
+            "hash": "#detail/show/news/"
+          }
+        ],
+        "toolbar_buttons": [
+          {
+            "icon": "icon-show-settings",
+            "text": "",
+            "class": "c-white",
+            "title": "Show_settings",
+            "data_action": "show_settings",
+            "name": "fbfeednews",
+            "for_mode": {
+              "show": true
+            }
+          },
+          {
+            "icon": "icon-clean-sorting",
+            "text": "",
+            "class": "c-white",
+            "title": "Clean_sorting",
+            "data_action": "clean_sorting",
+            "name": "Clean_sorting",
+            "for_mode": {
+              "show": true
+            }
+          },
+          {
+            "icon": "icon-reset-width",
+            "text": "",
+            "class": "c-white",
+            "title": "Reset_width",
+            "data_action": "reset_width",
+            "name": "Reset_width",
+            "for_mode": {
+              "show": true
+            }
+          },
+          {
+            "icon": "icon-delete-news",
+            "text": "",
+            "class": "c-white",
+            "title": "News",
+            "data_action": "delete_news",
+            "name": "fbfeednews",
+            "for_mode": {
+              "show": true
+            }
+          },
+          {
+            "icon": "icon-news-fake",
+            "text": "",
+            "class": "c-white",
+            "title": "News",
+            "data_action": "fake_news",
+            "name": "fbfeednews",
+            "for_mode": {
+              "show": true
+            }
+          },
+          {
+            "icon": "icon-close-change",
+            "text": "",
+            "class": "c-white",
+            "title": "News_change",
+            "data_action": "close_change_news",
+            "name": "fbfeednews",
+            "for_mode": {
+              "edit": true
+            }
+          },
+          {
+            "icon": "icon-save-change",
+            "text": "",
+            "class": "c-white",
+            "title": "News_change",
+            "data_action": "change_news",
+            "name": "fbfeednews",
+            "for_mode": {
+              "edit": true
+            }
+          }
+        ]
+      }
+    ],
+    "label": "news",
+    "id": "news",
+    "order": "1"
+  }
+]

@@ -1,0 +1,29 @@
+<% var item = arguments[0]; %>
+<td
+<%= (item.curHeader && item.curHeader.width) ? 'style=\"width:' + item.curHeader.width + 'px\"' : '' %>
+<%= item.curHeader ? 'data-tdheaderid=\'' + item.curHeader.id + '\'' : '' %>
+<%= item.class ? 'class=\'' + item.class + '\'' :'' %> >
+
+<% if (curHeader.static === 'true') { %>
+
+<div data-counter="" style="color:red;"
+     class="table-body-item text-overflow <%= item.ind % 2 === 0 ? 'even' : '' %>"
+<%= item.curHeader ? 'data-counterheaderid=\'' + item.curHeader.id + '\'' : '' %> ><%= item.value ? item.value : '&nbsp;' %>
+</div>
+
+<% } else { %>
+<div  class="table-body-item text-overflow <%= item.ind % 2 === 0 ? 'even' : '' %>" >
+        <input type="text" data-input=""
+        <%= item.curHeader ? 'data-inputheaderid=\'' + item.curHeader.id + '\'' : '' %>
+        style="color:red; border:none; padding:0; width:100%; "
+        <% if(curHeader.readonly === 'true') { %>
+        readonly = "readonly"
+        <%}%>
+        <% if(curHeader.focus_item === 'true') { %>
+        data-focus = ""
+        <%}%>
+        value="<%= item.value ? item.value : '&nbsp;' %>" />
+</div>
+<% } %>
+
+</td>

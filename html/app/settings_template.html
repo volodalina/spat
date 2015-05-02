@@ -1,0 +1,78 @@
+<% var obj = arguments[0]; %>
+<% var array = _.filter(obj, function(_news) {return !_news.static}); %>
+<div class=" flex-box">
+<div data-role="settings_cont_inner" class="settings-container-inner">
+    <div class="flex-box">
+        <div class="flex-box header" data-role="headers" >
+            <div class="itm align_center">Column name</div>
+            <div class="itm align_center">Visibility</div>
+            <div class="itm align_center">Sort direction</div>
+            <div class="itm align_center">Sort order</div>
+            <div class="itm align_center">Column order</div>
+        </div>
+
+        <% _.each(array, function (news,ind) { %>
+        <div class="flex-box row <%= ind % 2 !== 0 ? 'even' : '' %>" data-setting_id="<%= news.id%>">
+            <div class="itm start"><%= news.label%> <br></div>
+            <div class="itm"  data-role="visibility">
+                <input type="checkbox" data-visibility_id="<%= news.id%>"
+                <% if(news.visibility === 'true') { %>checked<%}%>
+                />
+            </div>
+            <div class="itm start" data-role="sort_direction">
+                <input type="radio" name="sort_direction_<%= news.label%>" value="" <% if(news.sort_direction === '') { %>checked  <% } %> data-sort_direction_id="<%= news.id%>" />None<br>
+                <input type="radio" name="sort_direction_<%= news.label%>" value="1" <% if(news.sort_direction === '1') { %>checked  <% } %> data-sort_direction_id="<%= news.id%>" />0 - 9 A - Z<br>
+                <input type="radio" name="sort_direction_<%= news.label%>" value="-1" <% if(news.sort_direction === '-1') { %>checked <% } %> data-sort_direction_id="<%= news.id%>" />Z - A 9 - 0<br>
+            </div>
+
+            <div class="itm" data-role="sort_order">
+                <select data-action="sort_order" data-sort_order_id="<%= news.id%>">
+                    <%var currentSortOrder  = news.sort_order; %>
+                    <option value="" >&nbsp;&nbsp;</option>
+                    <% if(currentSortOrder !== "") {%>
+                    <option value="<%= currentSortOrder %>"   selected  data-sort_order_id="<%= news.id%>"  ><%= currentSortOrder %></option>
+                    <% } %>
+                </select>
+            </div>
+
+            <div class="itm" data-role="column_order">
+                <select data-action="column_order" data-column_order_id="<%= news.id%>">
+                    <%var currentOrder  = news.column_order; %>
+                    <% _.each(array, function (news) { %>
+                        <option value="<%= news.column_order%>"  data-option_id="<%= news.id%>" <% if(news.column_order === currentOrder ) { %>selected<% } %> ><%= news.column_order %> </option>
+                    <% }) %>
+                </select>
+            </div>
+        </div>
+        <% }) %>
+
+    </div>
+
+    <div class="flex-box" data-role="buttons">
+            <button  data-action="save_setting" class="button_save_setting buttom_setting" type="submit">
+                <svg width="30px" height="20px" viewBox="-20 -40 216 372" version="1.1node se" >
+                    <g id="Group" stroke="#220E99"  fill="none">
+                        <path stroke-width="80" stroke="#00cc00" d="M-10,200 50,250 "/>
+                        <path stroke-width="80" stroke="#00cc00" d="M230,50   50,300 "/>
+                        <path stroke-width="20" stroke="#ffffff" d="M10,210 75,270 "/>
+                        <path stroke-width="20" stroke="#ffffff" d="M205,80   70,270 "/>
+                    </g>
+                </svg>
+                <span>OK</span>
+            </button>
+
+            <button  data-action="close_setting" class="button_close_setting buttom_setting" type="submit">
+                <svg width="30px" height="20px" viewBox="-20 -40 216 372" version="1.1node se" >
+                    <g id="Group" stroke="#220E99"  fill="none">
+                        <path stroke-width="80" stroke="#ff0000" d="M-30,60   200,300 "/>
+                        <path stroke-width="80" stroke="#ff0000" d="M200,60   -30,300 "/>
+                        <path stroke-width="20" stroke="#ffffff" d="M0,90   170,270 "/>
+                        <path stroke-width="20" stroke="#ffffff" d="M170,90   0,270 "/>
+                    </g>
+                </svg>
+                <span>Close</span>
+            </button>
+
+    </div>
+</div>
+</div>

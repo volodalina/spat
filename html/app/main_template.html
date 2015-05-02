@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Single Page Application Table</title>
+        <link rel="shortcut icon" href="img/app/favico_me.ico" type="image/x-icon">
+        <!-- build:less-script -->
+        <!-- endbuild -->
+        <!-- build:less -->
+        <!-- endbuild -->
+        <!-- build:js-less -->
+        <!-- endbuild -->
+        <!-- build:js -->
+        <!-- endbuild -->
+    </head>
+    <body>
+
+        <div data-role="waiter_outer_container" class="waiter-outer-container" >
+            <div data-role="waiter_inner_cont" class="waiter-inner-container">
+                <!-- build:waiter -->
+                <!-- endbuild -->
+            </div>
+        </div>
+
+        <div data-role="settings_cont_outer" class="settings-container-outer  hide" ></div>
+
+        <div data-role="main_container_global" class="main-container-global">
+
+        </div>
+        <div data-role="login_container_global" class="login-container-global  hidden ">
+            <div data-role="auth_body_cont" class="container">
+                <form class="authentification-form flex">
+                        <div class="flex-itm">
+                            <label>Login:</label>
+                        </div>
+                        <div class="flex-itm">
+                            <input class="w-100p" type="text" name="userId" data-authentication="" >
+                        </div>
+                        <div class="flex-itm">
+                            <label>Password:</label>
+                        </div>
+                        <div class="flex-itm">
+                            <input class="w-100p" type="password" name="password" data-authentication="">
+                        </div>
+                        <div class="flex-itm">
+                            <label>Remember me:</label>
+                        </div>
+                        <div class="flex-itm">
+                            <input class="" type="checkbox" name="rememberMe" value="true" data-authentication="" >
+                        </div>
+                    <div  class="flex-itm">
+                        <button class="button_subm_login" type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

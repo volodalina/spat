@@ -1,0 +1,62 @@
+[
+  {
+    "id": "collections_configs",
+    "type": "remote",
+    "store": "pageload",
+    "db_name": "collections_configs",
+    "table_name": "collections_configs",
+    "db_version": 1,
+    "url": "mock/collections_configs.json",
+    "keyPath": "id"
+  },
+  {
+    "id": "navbar_configs",
+    "type": "remote",
+    "store": "pageload",
+    "db_name": "navbar_configs",
+    "table_name": "navbar_configs",
+    "db_version": 1,
+    "url": "mock/navbar_configs.json",
+    "keyPath": "id"
+  },
+  {
+    "id": "news_configs",
+    "type": "remote",
+    "store": "pageload",
+    "db_name": "news_configs",
+    "table_name": "news_configs",
+    "db_version": 3,
+    "url": "mock/news_configs.json",
+    "keyPath": "id"
+  },
+  {
+    "id": "news_headers",
+    "type": "link",
+    "linkId": "news_configs",
+    "db_name": "news_headers",
+    "table_name": "news_headers",
+    "db_version": 3,
+    "store": "true",
+    "keyPath": "id"
+  },
+  {
+    "id": "news_data",
+    "type": "remote",
+    "db_name": "news_data",
+    "table_name": "news_data",
+    "db_version": 1,
+    "url": "collection/news{{limit}}",
+    "rawUrl": "fakeNews?limit={{limit}}",
+    "sync": "false",
+    "keyPath": "id",
+    "store": "true"
+  },
+  {
+    "id": "news_filters",
+    "type": "local",
+    "db_name": "news_filters",
+    "table_name": "news_filters",
+    "db_version": 1,
+    "store": "true"
+  }
+]

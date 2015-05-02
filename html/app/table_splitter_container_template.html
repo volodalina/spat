@@ -1,0 +1,30 @@
+<% var cont = arguments[0]; %>
+<% if (cont.configs) { %>
+    <% var configs = _.filter(cont.configs, function(config) { return config.visibility == 'true'; }); %>
+    <% var headersByOrder = _.sortBy(configs, function(config) { return config.column_order }); %>
+    <% var lastHeader = _.last(headersByOrder); %>
+    <% var splitters = _.map( _.rest(headersByOrder), function(header) {
+    return {
+        height: cont.splitter_height,
+        width: cont.splitter_width,
+        top: 0,
+        left: header.offsetLeft - cont.splitter_width/2,
+        resizable: true
+    };
+    }); %>
+    <% splitters.push({
+        height: cont.splitter_height,
+        width: cont.splitter_width,
+        top: 0,
+        left: -cont.splitter_width/2
+    }); %>
+    <% splitters.push({
+        height: cont.splitter_height,
+        width: cont.splitter_width,
+        top: 0,
+        left: (lastHeader.offsetLeft + lastHeader.width) - cont.splitter_width/2
+    }); %>
+    <% _.each(splitters, function (splitter) { %>
+        <%= cont.table_splitter_item_template(splitter) %>
+    <% }) %>
+<% } %>

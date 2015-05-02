@@ -1,0 +1,24 @@
+<% var obj = arguments[0]; %>
+<div data-role="header_container" class="header-container">
+    <div data-role="table_toolbar_container" class="table-toolbar-container">
+        <% if (obj.toolbar_buttons && obj.toolbar_container_template && obj.toolbar_item_template) { %>
+            <%= obj.toolbar_container_template({
+            buttons : obj.toolbar_buttons,
+            toolbar_item_template : obj.toolbar_item_template,
+            header_description: obj.header_description}) %>
+        <% } %>
+    </div>
+    <div data-role="table_splitter_container" class="table-splitter-container">
+
+    </div>
+    <div data-role="table_header_container" class="table-header-content">
+
+    </div>
+</div>
+<table data-role="table_scroll_container" class="table-scroll-container" >
+    <tbody data-role="table_body_container">
+    </tbody>
+</table>
+<div data-role="table_footer_container" class="table-footer-container">
+
+</div>

@@ -1,0 +1,14 @@
+<% var obj = arguments[0]; %>
+<% if (obj.resizable === true) { %>
+<div class="table-splitter-item draggable"  data-drag="" data-splitteritem=""
+     style="height: <%= obj.height %>px; width: <%= obj.width %>px;
+            top: <%= obj.top %>px; left: <%= obj.left %>px;" >
+    <div class="line" data-role="resizer"></div>
+</div>
+<% } else { %>
+<div class="table-splitter-item" data-splitteritem=""
+     style="height: <%= obj.height %>px; width: <%= obj.width %>px;
+            top: <%= obj.top %>px; left: <%= obj.left %>px;" >
+    <div class=""></div>
+</div>
+<% } %>
